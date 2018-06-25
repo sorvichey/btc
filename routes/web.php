@@ -7,6 +7,7 @@ Route::post('/send-email', "FrontController@send_email");
 Route::get('/featured-work/{id}', "FrontController@featured_work");
 Route::get('/sign-in', "SigninController@index");
 Route::get('/sign-up', "SignupController@index");
+Route::post('/sign-up/save', "SignupController@save");
 Auth::routes();
 
 /////////////////////////////////////////////////////////////////////
@@ -18,6 +19,12 @@ Route::get('/admin/dashboard',"HomeController@index");
 // load file manager
 Route::get('/fm', "FileManagerController@index");
 
+Route::get('/admin/membership', "MembershipController@index");
+Route::get('/admin/membership/create', "MembershipController@create");
+Route::post('/admin/membership/save', "MembershipController@save");
+Route::get('/admin/membership/delete/{id}', "MembershipController@delete");
+Route::get('/admin/membership/edit/{id}', "MembershipController@edit");
+Route::post('/admin/membership/update', "MembershipController@update");
 
 // Page
 Route::get('/admin/page', "PageController@index");
