@@ -35,7 +35,7 @@
                                     <td>{{$vid->title}}</td>
                                     <td>
                                         <a class="btn btn-xs btn-info"  href="{{url('/admin/video/edit/'.$vid->id)}}" title="Edit"><i class="fa fa-pencil"></i></a>
-                                        <a class="btn btn-xs btn-danger"  href="{{url('/admin/video/delete/'.$vid->id)}}" onclick="return confirm('Do you want to delete?')" title="Delete"><i class="fa fa-remove"></i></a>
+                                        <a class="btn btn-xs btn-danger"  href="{{url('/admin/video/delete/'.$vid->id)}}" onclick="return confirm('Do you want to delete?')" title="Delete"><i class="fa fa-trash-o"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
