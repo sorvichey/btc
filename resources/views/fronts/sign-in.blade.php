@@ -1,8 +1,8 @@
 @extends('layouts.front')
 @section('content')
-    <link href="{{asset('front/css/page.css')}}" rel="stylesheet">
+<link href="{{asset('front/css/page.css')}}" rel="stylesheet">
     <!-- ***** Contact Us Area Start ***** -->
-    <section class="footer-contact-area section_padding_100 clearfix" id="contact">
+    <section class="wellcome_area section_padding_100 " id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">

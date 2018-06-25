@@ -6,7 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    @if(Session::has('sms'))
+                @if(Session::has('sms'))
                         <div class="alert alert-success" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="contact_from">
-                        <form action="{{url('sign-up/save')}}" method="post" onsubmit="check_password()">
+                        <form action="{{url('sign-up/save')}}" method="post">
                         {{csrf_field()}}
                             <div class="contact_input_area">
                                 <div class="row">
@@ -77,18 +77,4 @@
             </div>
         </div>
     </section>
-    <script>
-        function check_password() {
-            var pass = document.getElementById("password").value;
-            var cpass = document.getElementById("cpassword").value;
-            if(pass==cpass)
-            {
-                return true;
-            }
-            else{
-                document.getElementById("cpassword").style.border = "2px solid #FF1493";
-                return false;
-            }
-        }
-    </script>    
-@endsection
+    @endsection
