@@ -6,7 +6,12 @@ Route::get('/page/{id}', "FrontPageController@index");
 Route::post('/send-email', "FrontController@send_email");
 Route::get('/featured-work/{id}', "FrontController@featured_work");
 Route::get('/sign-in', "SigninController@index");
+Route::post('/membership/sign-in', 'SigninController@login');
+Route::get('/membership/sign-out', 'SigninController@logout');
+Route::get('/profile' , 'SigninController@profile');
+Route::post('/profile/upload/', "SigninController@upload");
 Route::get('/sign-up', "SignupController@index");
+
 Route::post('/sign-up/save', "SignupController@save");
 Auth::routes();
 

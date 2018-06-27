@@ -53,6 +53,28 @@
                     </div>
                 </div>
                 <!-- Signup btn -->
+                @if(Session::has('membership'))
+                <div class="col-sm-3">
+                    <div class="row">
+                        <div class="sing-up-button d-none d-lg-block">
+                            <div class="btn-group">
+                              
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-warning btn-member-left text-white btn-member dropdown-toggle" data-toggle="dropdown">
+                                    {{session('membership')->first_name}} {{session('membership')->last_name}}
+                                    </button>
+                                    <div class="dropdown-menu ">
+                                    <a class="dropdown-item text-warning" href="{{url('/profile')}}">Profile</a>
+                                    <a class="dropdown-item text-warning" href="#">My Orders </a>
+                                    <a class="dropdown-item text-warning" href="#"> My Score</a>
+                                    <a class="dropdown-item text-danger" href="{{url('membership/sign-out')}}">Sign Out</a>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                @else 
                 <div class="col-sm-3">
                     <div class="row">
                         <div class="sing-up-button d-none d-lg-block">
@@ -63,6 +85,8 @@
                         </div>
                     </div>
                 </div>
+               
+                @endif
             </div>
         </div>
     </header>
