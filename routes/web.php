@@ -3,14 +3,23 @@
 // Front End
 Route::get('/',"FrontController@index");
 Route::get('/page/{id}', "FrontPageController@index");
+Route::get('/plan', "FrontPageController@plan");
 Route::post('/send-email', "FrontController@send_email");
 Route::get('/featured-work/{id}', "FrontController@featured_work");
 Route::get('/sign-in', "SigninController@index");
 Route::post('/membership/sign-in', 'SigninController@login');
 Route::get('/membership/sign-out', 'SigninController@logout');
 Route::get('/profile' , 'SigninController@profile');
+Route::get('/profile/edit/{id}', "SigninController@edit");
+Route::post('/profile/update', "SigninController@update");
 Route::post('/profile/upload/', "SigninController@upload");
 Route::get('/sign-up', "SignupController@index");
+Route::get('/membership/reset-password', "SigninController@reset_password");
+Route::post('/membership/change-password', "SigninController@change_password");
+Route::get('/membership/forget-password', 'SigninController@forget_password');
+Route::post('/membership/recovery', 'SigninController@recovery_password');
+Route::get('/membership/service/reset/{id}', "SigninController@new_password");
+Route::post('/membership/service/update', "SigninController@update_password");
 
 Route::post('/sign-up/save', "SignupController@save");
 Auth::routes();
@@ -32,6 +41,15 @@ Route::get('/admin/membership/edit/{id}', "MembershipController@edit");
 Route::post('/admin/membership/update', "MembershipController@update");
 
 // Page
+Route::get('/admin/plan', "PlanController@index");
+Route::get('/admin/plan/create', "PlanController@create");
+Route::post('/admin/plan/save', "PlanController@save");
+Route::get('/admin/plan/delete/{id}', "PlanController@delete");
+Route::get('/admin/plan/edit/{id}', "PlanController@edit");
+Route::post('/admin/plan/update', "PlanController@update");
+Route::get('/admin/plan/view/{id}', "PlanController@view");
+
+// Plan
 Route::get('/admin/page', "PageController@index");
 Route::get('/admin/page/create', "PageController@create");
 Route::post('/admin/page/save', "PageController@save");
@@ -39,7 +57,8 @@ Route::get('/admin/page/delete/{id}', "PageController@delete");
 Route::get('/admin/page/edit/{id}', "PageController@edit");
 Route::post('/admin/page/update', "PageController@update");
 Route::get('/admin/page/view/{id}', "PageController@view");
-// Page
+
+// Our Service
 Route::get('/admin/our-service', "OurServiceController@index");
 Route::get('/admin/our-service/edit/{id}', "OurServiceController@edit");
 Route::post('/admin/our-service/update', "OurServiceController@update");

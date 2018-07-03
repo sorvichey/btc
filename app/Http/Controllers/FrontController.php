@@ -18,8 +18,8 @@ class FrontController extends Controller
             ->first();
       
         return view('fronts.index', $data);
-     
    }
+
    // view post detail
    public function post($id)
    {

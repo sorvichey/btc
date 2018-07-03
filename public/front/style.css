@@ -25,9 +25,6 @@ body {
  padding-right: 10px;
  padding-left: 10px; 
 }
-.container-c {
-    width: 900px;
-}
 
 h1,
 h2,
@@ -267,6 +264,10 @@ p {
 /* --------------------------
 :: 2.0 Header Area CSS
 -------------------------- */
+.section_padding_100_90 {
+    padding-top: 170px;
+    padding-bottom: 70px;
+}
 
 .header_area {
     left: 0;
@@ -347,7 +348,7 @@ p {
 /* stcicky css */
 
 .header_area.sticky {
-    background-color: #000;
+    background-color: #17181b;
     -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     height: 70px;
@@ -373,7 +374,7 @@ p {
 -------------------------- */
 
 .wellcome_area {
-    background: #000;
+    background: #17181b;
     position: relative;
     z-index: 1;
     background-position: bottom center;
@@ -979,7 +980,6 @@ p {
     z-index: 90;
     cursor: pointer;
 }
-
 .clients-feedback-area .slick-arrow.fa-angle-right {
     left: auto;
     right: 0;

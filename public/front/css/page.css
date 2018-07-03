@@ -1,5 +1,5 @@
 .header_area {
-	background: #000;
+	background: #17181b;
 }
 
 .section_padding_100 {
@@ -7,7 +7,7 @@
 }
 
 .footer-contact-area {
-    background: #000;
+    background: #17181b;
 }
 
 .footer-contact-area .line-shape {
@@ -65,7 +65,7 @@
 p {
     color: #fff;
     }
-#name, #email, #message , #password, #cpassword, #first_name, #last_name, #gender{
+#name, #email, #message , #password, #cpassword, #first_name, #last_name, #gender, #photo{
     font-size: 18px;
     padding: 15px 15px;
     border-radius: 31px;
@@ -76,4 +76,6 @@ select.form-control:not([size]):not([multiple]) {
 .form-control {
     line-height: 1;
 }
-
+.pd10 {
+    padding-top: 10px;
+}

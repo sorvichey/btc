@@ -19,12 +19,11 @@ class SignupController extends Controller
             $r->session()->flash('sms1', "Your email is invalid. Check it again!");
             return redirect('/sign-up')->withInput();
         }
-        $email = DB::table('memberships')
+        $count_email = DB::table('memberships')
             ->where('email', $r->email)
-            ->where('active', 1)
             ->count();
         $pass_leg = strlen($r->password);
-        if($email === 0 && $pass_leg >= 6) {
+        if($count_email === 0 && $pass_leg >= 6) {
             $data = array(
                 'first_name' => $r->first_name,
                 'last_name'=> $r->last_name,

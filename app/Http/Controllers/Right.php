@@ -44,31 +44,6 @@ class Right
         return $arr;
     }
 
-    public static function send_email($send_to, $id)
-    {
-        $a = url('/service/reset/'.$id);
-        $mail = new PHPMailer(true); // notice the \  you have to use root namespace here
-        try {
-            $mail->isSMTP(); // tell to use smtp
-            $mail->CharSet = "utf-8"; // set charset to utf8
-            $mail->SMTPAuth = true;  // use smpt auth
-            $mail->SMTPSecure = "ssl"; // or ssl
-            $mail->Host = "gator3163.hostgator.com";
-            $mail->Port = 465; // most likely something different for you. This is the mailtrap.io port i use for testing.
-            $mail->Username = "service@hrangkor.com";
-            $mail->Password = "service@168";
-            $mail->setFrom("service@hrangkor.com", "HR Angkor Co., Ltd");
-            $mail->Subject = "HR Angkor: Reset Your Password";
-            $mail->MsgHTML("<p>Please click the link below to reset your password.</p><p><a href='{$a}'>{$a}</a></p>");
-            $mail->addAddress($send_to, $send_to);
-            $mail->send();
-        } catch (phpmailerException $e) {
-//            dd($e);
-        } catch (Exception $e) {
-//            dd($e);
-        }
-        return 1;
-    }
     public static function sms($from, $subject, $message)
     {
         $mail = new PHPMailer(true); // notice the \  you have to use root namespace here
@@ -90,6 +65,32 @@ class Right
 //            dd($e);
         } catch (Exception $e) {
 //            dd($e);
+        }
+        return 1;
+    }
+
+    public static function send_email_membership($send_to, $id)
+    {
+        $a = url('/membership/service/reset/'.$id);
+        $mail = new PHPMailer(true); // notice the \  you have to use root namespace here
+        try {
+            $mail->isSMTP(); // tell to use smtp
+            $mail->CharSet = "utf-8"; // set charset to utf8
+            $mail->SMTPAuth = true;  // use smpt auth
+            $mail->SMTPSecure = "ssl"; // or ssl
+            $mail->Host = "gator4170.hostgator.com";
+            $mail->Port = 465; // most likely something different for you. This is the mailtrap.io port i use for testing.
+            $mail->Username = "support@eccbuildingtrust.com";
+            $mail->Password = "Khmer@123";
+            $mail->setFrom("support@eccbuildingtrust.com", "Build Trade");
+            $mail->Subject = "Bill-Trade: Reset Your Password";
+            $mail->MsgHTML("<p>Please click the link below to reset your password.</p><p><a href='{$a}'>{$a}</a></p>");
+            $mail->addAddress($send_to, $send_to);
+            $mail->send();
+        } catch (phpmailerException $e) {
+           dd($e);
+        } catch (Exception $e) {
+           dd($e);
         }
         return 1;
     }

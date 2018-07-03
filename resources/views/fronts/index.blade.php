@@ -96,11 +96,9 @@
       </div>
   </div>
   <!-- ***** Video Area End ***** -->
- 
-
-  <!-- ***** Pricing Plane Area Start *****==== -->
+ <?php  $plans = DB::table('plans')->where('active',1)->get();?>
   <section class="pricing-plane-area section_padding_100_70 clearfix" id="pricing">
-      <div class="container container-c">
+      <div class="container">
           <div class="row">
               <div class="col-12">
                   <!-- Heading Text  -->
@@ -110,78 +108,26 @@
                   </div>
               </div>
           </div>
-          <div class="row text-center no-gutters">
-              <div class="col-12 col-md-4 col-lg-4">
-                  <!-- Package Price  -->
-                  <div class="single-price-plan text-center">
-                      <!-- Package Text  -->
-                      <div class="package-plan">
-                          <h5>Starter Plan</h5>
-                          <div class="ca-price d-flex justify-content-center">
-                              <span>$</span>
-                              <h4>29</h4>
-                          </div>
-                      </div>
-                      <div class="package-description">
-                          <p><i class="fa fa-check text-success"></i> Up to 10 users monthly</p>
-                          <p><i class="fa fa-check text-success"></i>  Unlimited updates</p>
-                          <p><i class="fa fa-check text-success"></i>  Free host &amp; domain</p>
-                      </div>
-                      <!-- Plan Button  -->
-                      <div class="plan-button">
-                          <a href="#">Select Plan</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-12 col-md-4 col-lg-4">
-                  <!-- Package Price  -->
-                  <div class="single-price-plan text-center">
-                      <!-- Package Text  -->
-                      <div class="package-plan">
-                          <h5>Basic Plan</h5>
-                          <div class="ca-price d-flex justify-content-center">
-                              <span>$</span>
-                              <h4>49</h4>
-                          </div>
-                      </div>
-                      <div class="package-description">
-                          <p><i class="fa fa-check text-success"></i>  Up to 10 users monthly</p>
-                          <p><i class="fa fa-check text-success"></i>  Unlimited updates</p>
-                          <p><i class="fa fa-check text-success"></i> Free host &amp; domain</p>
-                          <p><i class="fa fa-check text-success"></i> 24/7 Support</p>
-                      </div>
-                      <!-- Plan Button  -->
-                      <div class="plan-button">
-                          <a href="#">Select Plan</a>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-12 col-md-4 col-lg-4">
-                  <!-- Package Price  -->
-                  <div class="single-price-plan active text-center">
-                      <!-- Package Text  -->
-                      <div class="package-plan">
-                          <h5>Advenced Plan</h5>
-                          <div class="ca-price d-flex justify-content-center">
-                              <span>$</span>
-                              <h4>69</h4>
-                          </div>
-                      </div>
-                      <div class="package-description">
-                          <p><i class="fa fa-check text-success"></i> Up to 10 users monthly</p>
-                          <p><i class="fa fa-check text-success"></i>  Unlimited updates</p>
-                          <p><i class="fa fa-check text-success"></i>  Free host &amp; domain</p>
-                          <p><i class="fa fa-check text-success"></i>  24/7 Support</p>
-                          <p><i class="fa fa-check text-success"></i> 10 Unique Users</p>
-                      </div>
-                      <!-- Plan Button  -->
-                      <div class="plan-button">
-                          <a href="#">Select Plan</a>
-                      </div>
-                  </div>
-              </div>
-            
-          </div>
+            <div class="row text-center">
+            @foreach($plans as $plan)
+                <div class="col-md-3 col-lg-3">
+                    <div class="single-price-plan text-center">
+                        <div class="package-plan">
+                            <h5>{{$plan->name}}</h5>
+                            <div class="ca-price d-flex justify-content-center">
+                                <span>$</span><h4>{{$plan->price}}</h4>
+                            </div>
+                        </div>
+                        <div class="package-description">
+                            {!! $plan->description !!}
+                        </div>
+                        <div class="plan-button">
+                            <a href="#">Select Plan</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+            </div>
       </div>
   </section>
   <!-- ***** Pricing Plane Area End ***** -->

@@ -21,8 +21,18 @@ class FrontPageController extends Controller
         $data['page'] = DB::table('pages')
             ->where('id', $id)
             ->first();
-            return view('fronts.page', $data);
+        return view('fronts.page', $data);
     }
+
+   public function plan()
+    {
+        $data['plans'] = DB::table('plans')
+            ->where('active', 1)
+            ->get();
+        
+        return view('fronts.plan', $data);  
+    }
+
     public function about()
     {
         $data['about'] = DB::table('pages')

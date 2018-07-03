@@ -86,7 +86,10 @@
                         <a class="nav-link" href="{{url('/slide')}}"><i class="fa fa-picture-o text-success"></i> Slide Show</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('/admin/membership')}}"><i class="fa fa-users text-pink "></i>Membership</a>
+                        <a class="nav-link" href="{{url('/admin/membership')}}"><i class="fa fa-users text-pink"></i>Membership</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('/admin/plan')}}"><i class="fa fa-pagelines text-primary"></i>Plan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/admin/video')}}"><i class="fa fa-youtube text-danger"></i> Video</a>

@@ -16,10 +16,13 @@
                     </div>
                     <div class="phone-text">
                         <p><span>Gender :</span> {{$profile->gender}}</p>
-                    </div>
-                    <button type="submit" class="btn submit-btn  btn-success-c">Edit Profile</button>
-                    <button type="submit" class="btn submit-btn btn-danger-c">Reset Password</button>
-                   
+                    </div> 
+                    <a href="{{url('profile/edit/'.$profile->id)}}">
+                        <button type="submit" class="btn submit-btn  btn-success-c">Edit Profile</button>
+                    </a>
+                    <a href="{{url('membership/reset-password')}}">
+                        <button type="submit" class="btn submit-btn btn-danger-c">Reset Password</button>
+                    </a>
                 </div>
                 <div class="col-md-6">
                     <!-- Form Start-->
@@ -36,14 +39,14 @@
                                     <!-- Single Input Area Start -->
                                     <div class="col-md-12">
                                         @if($profile->photo != null)
-                                            <img src="{{asset('/uploads/profiles/small/'.$profile->photo)}}" id="img" alt="" width="100">
+                                            <img src="{{asset('/uploads/profiles/small/'.$profile->photo)}}" id="img" alt="" width="120">
                                         @else
-                                            <img src="{{asset('uploads/profiles/profile.png')}}" id="img" alt="" width="100"> 
+                                            <img src="{{asset('uploads/profiles/member.png')}}" id="img" alt="" width="120"> 
                                         @endif
                                         <button type="submit" class="btn submit-btn float-right">Save Profile</button>
                                     </div>
                                     <div class="col-md-12"> <br>
-                                        <input type="file" name="photo" accept="image/*" onchange="loadFile(event)" id="photo" class="form-control"><span class="text-danger">(100 x 100)</span><br>
+                                        <input type="file" name="photo" accept="image/*" onchange="loadFile(event)" id="photo" class="form-control"><span class="text-danger">(120 x 120)</span><br>
                                     </div>
                                     <div class="col-md-12">
                                         @if(Session::has('sms'))
@@ -79,7 +82,7 @@
     <script>
         function loadFile(e){
             var output = document.getElementById('img');
-            output.width = 100;
+            output.width = 120;
             output.src = URL.createObjectURL(e.target.files[0]);
         }
     </script>
