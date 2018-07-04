@@ -38,7 +38,7 @@
                     </div>
                     <div class="contact_from">
                         <form action="{{url('membership/recovery')}}" method="post" accept-charset="UTF-8">
-                        {{csrf_field()}}
+                            {{csrf_field()}}
                             <div class="contact_input_area">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -52,7 +52,6 @@
                                     </div>
                                 </div>
                             </div>
-                           
                         </form>
                     </div>
                 </div>

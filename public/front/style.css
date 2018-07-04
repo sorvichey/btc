@@ -2,11 +2,7 @@
 @import url('css/font.css');
 @import 'css/bootstrap.min.css';
 @import 'css/animate.css';
-@import 'css/magnific-popup.css';
 @import 'css/owl.carousel.min.css';
-@import 'css/slick.css';
-@import 'css/themify-icons.css';
-@import 'css/ionicons.min.css';
 
 /* --------------------------
 :: 1.0 Base CSS Start
@@ -88,79 +84,6 @@ h6 {
 .section_padding_0_50 {
     padding-top: 0;
     padding-bottom: 50px;
-}
-
-img {
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.mt-15 {
-    margin-top: 15px;
-}
-
-.mt-30 {
-    margin-top: 30px;
-}
-
-.mt-40 {
-    margin-top: 40px;
-}
-
-.mt-50 {
-    margin-top: 50px;
-}
-
-.mt-100 {
-    margin-top: 100px;
-}
-
-.mr-15 {
-    margin-right: 15px;
-}
-
-.mr-30 {
-    margin-right: 30px;
-}
-
-.mr-50 {
-    margin-right: 50px;
-}
-
-.mr-100 {
-    margin-right: 100px;
-}
-
-.mb-15 {
-    margin-bottom: 15px;
-}
-
-.mb-30 {
-    margin-bottom: 30px;
-}
-
-.mb-50 {
-    margin-bottom: 50px;
-}
-
-.mb-100 {
-    margin-bottom: 100px;
-}
-
-.ml-15 {
-    margin-left: 15px;
-}
-
-.ml-30 {
-    margin-left: 30px;
-}
-
-.ml-50 {
-    margin-left: 50px;
-}
-
-.ml-100 {
-    margin-left: 100px;
 }
 
 ul,
@@ -278,6 +201,22 @@ p {
     padding: 0 4%;
 }
 
+.btn1-plan {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.btn-plan {
+    background: #17181b;
+    border: 1px solid #17181b;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    color: #fff;
+}
+
 .menu_area .navbar-brand {
     font-size: 72px;
     font-weight: 700;
@@ -345,7 +284,6 @@ p {
 .text-yellow {
     color: #ffc107;
 }
-/* stcicky css */
 
 .header_area.sticky {
     background-color: #17181b;
@@ -364,6 +302,7 @@ p {
 .header_area.sticky .menu_area #nav .nav-link {
     padding: 23px 15px;
 }
+
 .header_area.sticky .navbar {
     padding: 0;
 }
@@ -416,13 +355,16 @@ p {
 .flat, .dropdown-menu.show {
     border-radius: 0;
 }
+
 .btn-member {
     border-bottom-right-radius: 29px;
     border-top-right-radius: 29px;
 }
+
 .btn {
     cursor: pointer;
 }
+
 .btn-member-left {
     border-bottom-left-radius: 29px;
     border-top-left-radius: 29px;
@@ -436,14 +378,7 @@ p {
     position: relative;
     z-index: 3;
 }
-.dropdown-item.active, .dropdown-item:active {
-    background-color: #ffc107;
-}
 
-.dropdown-item:focus, .dropdown-item:hover {
-    color: #000;
-    background-color: #ffc107;
-}
 .wellcome-heading > h4 {
     font-size: 250px;
     font-weight: 900;
@@ -492,6 +427,7 @@ p {
 .wellcome-heading > p {
     color: #fff;
 }
+
 .wellcome-heading > h3 {
     font-size: 250px;
     position: absolute;
@@ -553,81 +489,11 @@ p {
     margin-bottom: 0;
 }
 
-.app-download-area {
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-preferred-size: 1;
-    flex-basis: 1;
-    margin-top: 50px;
-}
-
-.app-download-btn a {
-    border: 1px solid #ddd;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: 15px 30px;
-    border-radius: 30px;   
-    -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-.app-download-btn.active a,
-.app-download-btn a:hover {
-    border-color: transparent;
-    background-color: #ffc107;
-}
-
-.app-download-btn a i {
-    color: #47425d;
-    font-size: 24px;
-    margin-right: 15px;
-    -webkit-transition-duration: 500ms;
-    -o-transition-duration: 500ms;
-    transition-duration: 500ms;
-}
-
-.app-download-btn a p {
-    font-size: 16px;
-    line-height: 1;
-    -webkit-transition-duration: 500ms;
-    -o-transition-duration: 500ms;
-    transition-duration: 500ms;
-}
-
-.app-download-btn a p span {
-    font-size: 16px;
-    display: block;
-}
 .video-section {
     padding-top: 50px;]
     padding-bottom: 50px;
     background: #fff;
 }
-.app-download-btn:first-child {
-    margin-right: 20px;
-}
-
-.app-download-btn a:hover i,
-.app-download-btn.active a i,
-.app-download-btn.active a p,
-.app-download-btn a:hover p {
-    color: #fff;
-}
-
-/* --------------------------
-:: 5.0 Features Area CSS
--------------------------- */
 
 .single-feature {
     margin-bottom: 50px;
@@ -696,30 +562,6 @@ p {
     transform: scale(1.1); 
 }
 
-/* --------------------------
-:: 7.0 Cool Facts Area CSS
--------------------------- */
-
-.cool_facts_area {
-    position: relative;
-    z-index: auto;
-    background: #000;
-    padding: 180px 0 80px 0;
-    top: -100px;
-}
-
-
-.cool_facts_area:after {
-    position: absolute;
-    bottom: -100px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100px;
-    background-color: #fff;
-    content: ''
-}
-
 .text-video {
     font-weight: 900;
     color: #ffc107;
@@ -749,69 +591,22 @@ p {
 }
 
 /* --------------------------
-:: 8.0 Screenshots Area CSS
--------------------------- */
-
-.app_screenshots_slides {
-    padding: 0 6%;
-}
-
-.app_screenshots_slides .single-shot {
-    opacity: 0.7;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-    -webkit-transform: scale(0.85);
-    -ms-transform: scale(0.85);
-    transform: scale(0.85)
-}
-
-.app_screenshots_slides .center .single-shot {
-    opacity: 1;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1)
-}
-
-.app-screenshots-area .owl-dot {
-    height: 11px;
-    width: 11px;
-    border: 2px solid #a49fba;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 0 6px;
-    margin-top: 50px;
-}
-
-.app-screenshots-area .owl-dot.active {
-    background-color: #fb397d;
-    border: transparent;
-}
-
-.app-screenshots-area .owl-dots {
-    height: 100%;
-    width: 100%;
-    text-align: center;
-}
-
-/* --------------------------
 :: 9.0 Pricing Plan Area CSS
 -------------------------- */
 
 .pricing-plane-area {
     background: #f1f1f1;
 }
-
 .single-price-plan {
     background: #ffffff;
     border: 1px solid #ebebeb;
     border-radius: 16px;
     margin-bottom: 30px;
-    transition: transform .6s;
-}
-.single-price-plan:hover {
     -ms-transform: scale(1.1); /* IE 9 */
     -webkit-transform: scale(1.1); /* Safari 3-8 */
     transform: scale(1.1); 
+    margin-left: 15px;
+    margin-right: 15px;
 }
 .single-price-plan .package-plan {
     padding: 40px 0;
@@ -846,9 +641,6 @@ p {
     font-size: 16px;
     font-weight: 500;
     display: block;
-    -webkit-transition-duration: 500ms;
-    -o-transition-duration: 500ms;
-    transition-duration: 500ms;
 }
 
 .single-price-plan .package-description > p {
@@ -859,131 +651,6 @@ p {
 
 .single-price-plan .package-description > p:first-child {
     border-top: 1px solid #ebebeb;
-}
-
-.single-price-plan.active .package-plan,
-.single-price-plan.active .plan-button > a,
-.single-price-plan:hover .plan-button > a {
-    background-color: #ffc107;
-}
-
-.single-price-plan.active .package-plan .ca-price > h4,
-.single-price-plan.active .package-plan .ca-price > span,
-.single-price-plan.active .package-plan > h5,
-.single-price-plan.active .plan-button > a {
-    color: #fff;
-}
-
-/* --------------------------
-:: 10.0 Testimonials Area CSS
--------------------------- */
-
-.clients-feedback-area .client-name > h5 {
-    color: #5b32b4;
-    font-size: 22px;
-    margin-top: 5px;
-}
-
-.clients-feedback-area .star-icon > i {
-    font-size: 18px;
-    color: #f1b922;
-}
-
-.clients-feedback-area .client-description > p {
-    max-width: 1010px;
-    margin: auto;
-    margin-bottom: 15px;
-    font-size: 22px;
-}
-
-.clients-feedback-area .client > i {
-    font-size: 48px;
-    color: #897ceb;
-    margin-bottom: 30px;
-}
-
-.clients-feedback-area .client-name > p {
-    color: #b5aec4;
-}
-
-.clients-feedback-area .slick-dots {
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center
-}
-
-.clients-feedback-area .slick-dots li button {
-    width: 12px;
-    height: 12px;
-    text-indent: -999999999999999999999999px;
-    border: 3px solid #a49fba;
-    background-color: #fff;
-    border-radius: 50%;
-    margin: 5.5px;
-    outline: none;
-}
-
-.clients-feedback-area .slick-dots li.slick-active button {
-    background-color: #fb397d;
-    border-color: #fb397d;
-}
-
-.clients-feedback-area .slick-slide.client-thumbnail {
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    height: 129px;
-}
-
-
-.clients-feedback-area .slick-slide img {
-    display: block;
-    width: 80px !important;
-    height: 80px !important;
-    border-radius: 50%;
-    border: 5px solid #fff;
-    -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.clients-feedback-area .slick-slide.slick-current img {
-    width: 100px !important;
-    height: 100px !important;
-}
-
-.clients-feedback-area .slick-arrow {
-    position: absolute;
-    width: 30px;
-    background-color: #fff;
-    height: 100%;
-    text-align: center;
-    font-size: 24px;
-    color: #b5aec4;
-    display: block;
-    line-height: 550%;
-    left: 0;
-    z-index: 90;
-    cursor: pointer;
-}
-.clients-feedback-area .slick-arrow.fa-angle-right {
-    left: auto;
-    right: 0;
-    top: 0;
 }
 
 /* --------------------------
@@ -1128,9 +795,15 @@ p {
     margin: 2.5px;
 }
 
-.single-team-member {
-    margin-bottom: 50px;
+.text-plan {
+    font-size: 40px;
+    font-weight: 700;
 }
+
+.page-plan {
+    background: #17181b;
+}
+
 
 /* --------------------------
 :: 13.0 Contact Area CSS Start
