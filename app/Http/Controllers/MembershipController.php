@@ -21,6 +21,13 @@ class MembershipController extends Controller
             ->paginate(18);
         return view('memberships.index', $data);
     }
+    public function detail($id)
+    {
+        $data['member'] = DB::table('memberships')
+            ->where('id', $id)
+            ->first();
+        return view('memberships.detail', $data);
+    }
     // load create form
     public function create()
     {
@@ -28,7 +35,7 @@ class MembershipController extends Controller
         {
             return view('permissions.no');
         }
-        return view('pages.create');
+        return view('memberships.create');
     }
     // save new page
     public function save(Request $r)

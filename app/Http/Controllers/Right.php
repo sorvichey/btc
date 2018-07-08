@@ -68,7 +68,30 @@ class Right
         }
         return 1;
     }
-
+    public static function send_email($to, $subject, $message)
+    {
+        $mail = new PHPMailer(true); // notice the \  you have to use root namespace here
+        try {
+            $mail->isSMTP(); // tell to use smtp
+            $mail->CharSet = "utf-8"; // set charset to utf8
+            $mail->SMTPAuth = true;  // use smpt auth
+            $mail->SMTPSecure = "ssl"; // or ssl
+            $mail->Host = "mail.vdoo.biz";
+            $mail->Port = 465; // most likely something different for you. This is the mailtrap.io port i use for testing.
+            $mail->Username = "support@vdoo.biz";
+            $mail->Password = "Khmer@123";
+            $mail->setFrom("support@vdoo.biz", "Bill-Trade");
+            $mail->Subject = "Bill-Trade: ". $subject;
+            $mail->MsgHTML($message);
+            $mail->addAddress($to, $to);
+            $mail->send();
+        } catch (phpmailerException $e) {
+//            dd($e);
+        } catch (Exception $e) {
+//            dd($e);
+        }
+        return 1;
+    }
     public static function send_email_membership($send_to, $id)
     {
         $a = url('/membership/service/reset/'.$id);

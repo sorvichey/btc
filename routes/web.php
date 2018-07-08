@@ -20,7 +20,9 @@ Route::get('/membership/forget-password', 'SigninController@forget_password');
 Route::post('/membership/recovery', 'SigninController@recovery_password');
 Route::get('/membership/service/reset/{id}', "SigninController@new_password");
 Route::post('/membership/service/update', "SigninController@update_password");
-
+// buy plan
+Route::get('/buyplan/{id}', 'FrontController@buy');
+Route::get('/confirm/buy', 'FrontController@confirm');
 Route::post('/sign-up/save', "SignupController@save");
 Auth::routes();
 
@@ -39,6 +41,7 @@ Route::post('/admin/membership/save', "MembershipController@save");
 Route::get('/admin/membership/delete/{id}', "MembershipController@delete");
 Route::get('/admin/membership/edit/{id}', "MembershipController@edit");
 Route::post('/admin/membership/update', "MembershipController@update");
+Route::get('/admin/membership/detail/{id}', "MembershipController@detail");
 
 // Page
 Route::get('/admin/plan', "PlanController@index");
@@ -121,3 +124,8 @@ Route::post('/social/save', "SocialController@save");
 Route::get('/social/edit/{id}', "SocialController@edit");
 Route::post('/social/update', "SocialController@update");
 Route::get('/social/delete/{id}', "SocialController@delete");
+// order admin
+Route::get('/admin/order', "OrderController@index");
+Route::get('/admin/order/detail/{id}', "OrderController@detail");
+Route::get('/admin/order/delete/{id}', "OrderController@delete");
+Route::get('/admin/order/approve/{id}', "OrderController@approve");

@@ -77,10 +77,16 @@
                         <a class="nav-link" href="{{url('/admin/dashboard')}}"><i class="fa fa-tachometer text-primary"></i> {{$lb_dashboard}} </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('/main-menu')}}"><i class="fa fa-navicon text-danger"></i> Menu </a>
+                        <a class="nav-link" href="{{url('/main-menu')}}"><i class="fa fa-navicon text-danger"></i> Menu</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/admin/page')}}"><i class="fa fa-columns text-warning"></i> Pages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('/admin/order')}}"><i class="fa fa-star text-success"></i> Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('/admin/payment')}}"><i class="fa fa-th text-info"></i> Payment Request</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('/slide')}}"><i class="fa fa-picture-o text-success"></i> Slide Show</a>
@@ -95,7 +101,7 @@
                         <a class="nav-link" href="{{url('/admin/video')}}"><i class="fa fa-youtube text-danger"></i> Video</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('/social')}}"><i class="fa fa-facebook text-info"></i> Social </a>
+                        <a class="nav-link" href="{{url('/social')}}"><i class="fa fa-facebook text-info"></i> Social</a>
                     </li>
                     <li class="nav-item nav-dropdown">
                         <a href="#" class="nav-link nav-dropdown-toggle">

@@ -24,7 +24,7 @@
                             {!! $plan->description !!}
                         </div>
                         <div class="btn1-plan">
-                            <input type="button" class="form-control btn btn-warning btn-plan" value="Select Plan">
+                            <a href="{{url('/buyplan/'.$plan->id)}}" class="form-control btn btn-warning btn-plan">Buy Now</a>
                         </div>
                     </div>
                 </div>
