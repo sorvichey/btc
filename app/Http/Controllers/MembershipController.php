@@ -26,6 +26,20 @@ class MembershipController extends Controller
         $data['member'] = DB::table('memberships')
             ->where('id', $id)
             ->first();
+        $data['orders'] = DB::table('orders')
+            ->join('plans', 'orders.plan_id', 'plans.id')
+            ->where('orders.member_id', $id)
+            ->orderBy('orders.id', 'desc')
+            ->select('orders.*', 'plans.name', 'plans.price')
+            ->get();
+        $data['lowers'] = DB::table('memberships')
+            ->where('refby', $id)
+            ->orderBy('id', 'desc')
+            ->get();
+        $data['payments'] = DB::table('payments')
+            ->where('member_id', $id)
+            ->orderBy('id', 'desc')
+            ->get();
         return view('memberships.detail', $data);
     }
     // load create form
@@ -103,6 +117,22 @@ class MembershipController extends Controller
             $r->session()->flash('sms1', $sms1);
             return redirect('/admin/page/edit/'.$r->id);
         }
+    }
+    public function edit_score($id)
+    {
+        $member = DB::table('memberships')
+            ->where('id', $id)
+            ->first();
+        return view('memberships.edit-score', compact('member'));
+    }
+    public function update_score(Request $r)
+    {
+        $data = array(
+            'score' => $r->score
+        );
+        DB::table('memberships')->where('id', $r->id)->update($data);
+        $r->session()->flash('sms', "Score has been updated!");
+        return redirect("/admin/membership/edit-score/".$r->id);
     }
 }
 
