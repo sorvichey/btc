@@ -82,7 +82,13 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <p class="text-white" id="text-white"> <input type="checkbox" id="term" > I accept the terms and conditions of Bil-Trade.<a href="{{asset(url('/page/3'))}}">View terms and conditions</a></p>
+                                            <p class="text-white" id="text-white"> 
+                                                <label>
+                                                <input type="checkbox" id="term" > 
+                                                I accept the terms and conditions of Bil-Trade.
+                                                <a href="{{asset(url('/page/3'))}}" target="_blank">View terms and conditions</a>
+                                                </label>
+                                            </p>
                                         </div>
                                     </div>
                                    
