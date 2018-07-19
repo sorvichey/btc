@@ -68,10 +68,12 @@
         <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currencyid="1" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+                <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                <div id='btc1' class="coinmarketcap-currency-widget" data-currencyid="1" data-base="USD" data-secondary="" data-ticker="true" data-rank="false" data-marketcap="false" data-volume="false" data-stats="USD" data-statsticker="false"></div>
             </div>
             <div class="col-sm-6">
-                    <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script><div class="coinmarketcap-currency-widget" data-currencyid="2083" data-base="USD" data-secondary="" data-ticker="true" data-rank="true" data-marketcap="true" data-volume="true" data-stats="USD" data-statsticker="false"></div>
+                <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+                <div id='btc2' class="coinmarketcap-currency-widget" data-currencyid="1027" data-base="USD" data-secondary="" data-ticker="true" data-rank="false" data-marketcap="false" data-volume="false" data-stats="USD" data-statsticker="false"></div>
             </div>
         </div>
         </div>
@@ -135,10 +137,11 @@
               </div>
               <div class="col-md-4">
                   <div class="get-started-button wow bounceInDown" data-wow-delay="0.5s">
-                      <a href="#">Get Started</a>
+                      <a href="{{url('/sign-up')}}">Get Started</a>
                   </div>
               </div>
           </div>
       </div>
+    
   </section>
 @endsection

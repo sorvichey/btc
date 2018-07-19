@@ -29,15 +29,30 @@ class SignupController extends Controller
                 'last_name'=> $r->last_name,
                 'gender' => $r->gender,
                 'email' => $r->email,
+                'username' => $r->username,
+                'refby' => session('ref'),
                 'password' => password_hash($r->password, PASSWORD_BCRYPT)
             );
             $sms = "The sign up has been created successfully.";
             $sms1 = "Fail to create the sign up, please check again!";
-            $i = DB::table('memberships')->insert($data);
+            $i = DB::table('memberships')->insertGetId($data);
             if ($i)
             {
-                $r->session()->flash('sms', $sms);
-                return redirect('/sign-up');
+                $link = url('/') . "/confirm/".md5($i);
+               
+                $sms =<<<EOT
+                <h2>Sign Up Verification</h2>
+                <hr>
+                <p>
+                    Please click the link below to complete your registration.
+                </p>
+                <p>
+                    <a href="{$link}" target="_blank">{$link}</a>
+                </p>
+EOT;
+                // send email confirmation
+                Right::sms($r->email, $sms);
+                return view('fronts.confirm');
             }
             else
             {
@@ -55,4 +70,9 @@ class SignupController extends Controller
             return redirect('/sign-up')->withInput();
         }
     } 
+    public function confirm($id)
+    {
+        DB::statement("UPDATE memberships set verify=1 where md5(id)='{$id}'");
+        return redirect('/sign-in');
+    }
 }

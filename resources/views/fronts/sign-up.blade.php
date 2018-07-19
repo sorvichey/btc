@@ -68,6 +68,19 @@
                                             <input type="email" class="form-control" name="email" id="email"  value="{{old('email')}}" placeholder="E-mail" required>
                                         </div>
                                     </div>
+                                    
+                                    <div class="col-md-12">
+                                            <div class="form-group">
+                                                <h4 class="text-white">Repeat Email: </h4>
+                                                <input type="email" class="form-control" name="remail" id="remail"  value="{{old('email')}}" placeholder="E-mail" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <h4 class="text-white">Username: </h4>
+                                                    <input type="text" class="form-control" name="username" id="username"  value="{{old('username')}}" placeholder="Username" required>
+                                                </div>
+                                            </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <h4 class="text-white">Password: </h4>
@@ -109,9 +122,15 @@
                 var password = document.getElementById("password").value;
                 var confirm_password = document.getElementById("cpassword").value;
                 var term = document.getElementById("term").checked;
-              
+                var m = document.getElementById("email").value;
+                var m1 = document.getElementById('remail').value;
                  
-             
+                if(m!=m1)
+                {
+                    document.getElementById("remail").style.border = "4px solid red";
+                    alert("Email and repeat email is not mached!");
+                    event.preventDefault();
+                }
                     if( password != confirm_password) {
                        
                         document.getElementById("cpassword").style.border="4px solid red";

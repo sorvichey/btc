@@ -10,13 +10,18 @@ class FrontController extends Controller
 {
    
     // index
-    public function index()
+    public function index(Request $r)
     {
+       if(isset($_GET['ref']))
+       {
+            $ref = @$_GET['ref'];
+            $r->session()->put('ref', $ref);
+       }
         $data['video'] = DB::table('videos')
             ->where('active', 1)
             ->orderBy('id', 'desc')
             ->first();
-      
+        
         return view('fronts.index', $data);
    }
 
@@ -203,5 +208,118 @@ EOT;
         else{
             return view('fronts.fail');
         }
+   }
+   public function order()
+   {
+        $member = session('membership');
+        if($member==null)
+        {
+            return redirect('/sign-in');
+        }
+        $data['orders'] = DB::table('orders')
+            ->join('plans', 'orders.plan_id', 'plans.id')
+            ->where('orders.member_id', $member->id)
+            ->orderBy('orders.id', 'desc')
+            ->select('orders.*', 'plans.name', 'plans.price')
+            ->get();
+        return view('fronts.order', $data);
+   }
+   public function downline()
+   {
+       $member = session('membership');
+       if($member==null)
+       {
+           return redirect('/sign-in');
+       }
+       $data['lines'] = DB::table('memberships')
+            ->where('refby', md5($member->id))
+            ->get();
+        return view('fronts.downline', $data);
+   }
+   public function payment()
+   {
+       $member = session('membership');
+       if($member==null)
+       {
+           return redirect('/sign-in');
+       }
+       $data['pays'] = DB::table('payments')
+        ->where('member_id', $member->id)
+        ->get();
+        return view('fronts.payment', $data);
+   }
+   public function request()
+   {
+        $member = session('membership');
+        if($member==null)
+        {
+            return redirect('/sign-in');
+        }
+        $data['rate'] = DB::table('rates')->where('id',1)->first();
+        return view('fronts.request', $data);
+   }
+   public function request_payment(Request $r)
+   {
+        $member = session('membership');
+        if($member==null)
+        {
+            return redirect('/sign-in');
+        }
+        $score = $r->score;
+        if($score>$member->score)
+        {
+            $r->session()->flash('sms1', "Your score is not enough!");
+            return redirect('/request');
+        }
+        else{
+            $rate = DB::table('rates')->where('id',1)->first();
+            $amount = $score * $rate->rate;
+            $data = array(
+                'request_date' => date('Y-m-d'),
+                'score' => $score,
+                'amount' => $amount,
+                'member_id' => $member->id
+            );
+            DB::table('payments')->insert($data);
+            // send email to alert
+            $sms =<<<EOT
+            <p>Dear {$member->first_name} {$member->last_name},</p>
+            <br>
+            <p>
+                You have requested payment with this score: {$score}. We are proccessing it and will get back to you soon!
+            </p>
+EOT;
+            Right::send_email($member->email, "Payment Request", $sms);
+            $sms1 =<<<EOT
+            <p>Dear Admin,</p>
+            <br>
+            <p>
+                There is a payment request with The following information.
+            </p>
+            <p>
+                Member ID: {$member->id}
+            </p>
+            <p>
+                Member Name: {$member->first_name} {$member->last_name}
+            </p>
+            <p>
+                Email: {$member->email}
+            </p>
+            <p>
+                Requested Score: {$score}
+            </p>
+            <p>
+                Requested Amount: $ {$amount}
+            </p>
+EOT;
+            $mails = DB::table('admin_emails')->get();
+            foreach($mails as $m)
+            {
+                Right::send_email($m->email, "Payment Request", $sms1);
+
+            }
+            return view('fronts.thank');
+        }
+        
    }
 }

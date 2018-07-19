@@ -16,15 +16,16 @@ class SigninController extends Controller
     }
     
     public function login(Request $r) {
-        $email = $r->email;
+        $username = $r->username;
         $pass = $r->pass;
-        $membership = DB::table('memberships')->where('active',1)->where('email', $email)->first();
+        $membership = DB::table('memberships')->where('active',1)->where('username', $username)->first();
       
         if($membership!=null)
         {  
-            if(password_verify($pass, $membership->password))
+            if(password_verify($pass, $membership->password) && $membership->verify==1)
             {
               
+                
                 if($r->session()->get('membership')!=NULL)
                 {
                     $r->session()->forget('membership');
@@ -85,7 +86,8 @@ class SigninController extends Controller
             'first_name' => $r->first_name,
             'last_name' => $r->last_name,
             'gender' => $r->gender,
-            'email' => $r->email
+            'email' => $r->email,
+            'username' => $r->username
         );
         if($r->photo) {
             $file = $r->file('photo');

@@ -24,6 +24,12 @@ Route::post('/membership/service/update', "SigninController@update_password");
 Route::get('/buyplan/{id}', 'FrontController@buy');
 Route::get('/confirm/buy', 'FrontController@confirm');
 Route::post('/sign-up/save', "SignupController@save");
+Route::get('/order', "FrontController@order");
+Route::get('/downline', "FrontController@downline");
+Route::get('/payment', "FrontController@payment");
+Route::get('/request', "FrontController@request");
+Route::post('/request/submit', "FrontController@request_payment");
+Route::get('/confirm/{id}', "SignupController@confirm");
 Auth::routes();
 
 /////////////////////////////////////////////////////////////////////
@@ -131,3 +137,7 @@ Route::get('/admin/order', "OrderController@index");
 Route::get('/admin/order/detail/{id}', "OrderController@detail");
 Route::get('/admin/order/delete/{id}', "OrderController@delete");
 Route::get('/admin/order/approve/{id}', "OrderController@approve");
+Route::get('/admin/payment', "PaymentController@index");
+Route::get('/admin/payment/detail/{id}', "PaymentController@detail");
+Route::get('/admin/payment/delete/{id}', "PaymentController@delete");
+Route::get('/admin/payment/approve/{id}', "PaymentController@approve");

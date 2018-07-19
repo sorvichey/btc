@@ -19,7 +19,14 @@
 
     <!-- Responsive CSS -->
     <link href="{{asset('front/css/responsive.css')}}" rel="stylesheet">
-
+    <style>
+        div#btc1>div>div:last-child{
+            display: none;
+        }
+        div#btc2>div>div:last-child{
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -64,9 +71,10 @@
                                     {{session('membership')->first_name}} {{session('membership')->last_name}}
                                     </button>
                                     <div class="dropdown-menu ">
-                                    <a class="dropdown-item text-warning" href="{{url('/profile')}}">Profile</a>
-                                    <a class="dropdown-item text-warning" href="#">My Orders </a>
-                                    <a class="dropdown-item text-warning" href="#"> My Score</a>
+                                    <a class="dropdown-item text-warning" href="{{url('/profile')}}"> Profile</a>
+                                    <a class="dropdown-item text-warning" href="{{url('/order')}}"> Orders </a>
+                                    <a class="dropdown-item text-warning" href="{{url('/payment')}}"> Payment Request</a>
+                                    <a class="dropdown-item text-warning" href="{{url('/downline')}}"> Downlines</a>
                                     <a class="dropdown-item text-danger" href="{{url('membership/sign-out')}}">Sign Out</a>
                                     </div>
                                 </div>
@@ -134,6 +142,7 @@
     <script src="{{asset('front/js/footer-reveal.min.js')}}"></script>
     <!-- Active JS -->
     <script src="{{asset('front/js/active.js')}}"></script>
+    @yield('js')
 </body>
 
 </html>

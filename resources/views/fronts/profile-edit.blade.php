@@ -70,6 +70,12 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
+                                            <div class="form-group">
+                                                <h4 class="text-white">Username </h4>
+                                                <input type="text" class="form-control" value="{{$profile->username}}" name="username" id="username"  value="{{old('username')}}"  required>
+                                            </div>
+                                        </div>
+                                    <div class="col-md-12">
                                         <h4 class="text-white">Photo </h4>
                                         <input type="file" name="photo" accept="image/*" onchange="loadFile(event)" id="photo" class="form-control"><span class="text-danger">(120 x 120)</span><br>
                                         @if($profile->photo !== null)

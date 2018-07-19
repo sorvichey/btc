@@ -44,7 +44,7 @@ class Right
         return $arr;
     }
 
-    public static function sms($from, $subject, $message)
+    public static function sms($to, $message)
     {
         $mail = new PHPMailer(true); // notice the \  you have to use root namespace here
         try {
@@ -53,13 +53,13 @@ class Right
             $mail->SMTPAuth = true;  // use smpt auth
             $mail->SMTPSecure = "ssl"; // or ssl
             $mail->Host = "gator4170.hostgator.com";
-            $mail->Port = 465; // most likely something different for you. This is the mailtrap.io port i use for testing.
-            $mail->Username = "support@eccbuildingtrust.com";
+            $mail->Port = 465; 
+            $mail->Username = "sales@bill-trade.com";
             $mail->Password = "Khmer@123";
-            $mail->setFrom($from, "ECC Building Trust");
-            $mail->Subject = "ECC: ". $subject;
+            $mail->setFrom("sales@bill-trade.com", "Bill-Trade");
+            $mail->Subject = "Confirm Your Registration";
             $mail->MsgHTML($message);
-            $mail->addAddress("info@eccbuildingtrust.com", "info@eccbuildingtrust.com");
+            $mail->addAddress($to, $to);
             $mail->send();
         } catch (phpmailerException $e) {
 //            dd($e);
@@ -70,18 +70,18 @@ class Right
     }
     public static function send_email($to, $subject, $message)
     {
-        $mail = new PHPMailer(true); // notice the \  you have to use root namespace here
+        $mail = new PHPMailer(true); 
         try {
-            $mail->isSMTP(); // tell to use smtp
-            $mail->CharSet = "utf-8"; // set charset to utf8
-            $mail->SMTPAuth = true;  // use smpt auth
-            $mail->SMTPSecure = "ssl"; // or ssl
-            $mail->Host = "mail.vdoo.biz";
-            $mail->Port = 465; // most likely something different for you. This is the mailtrap.io port i use for testing.
-            $mail->Username = "support@vdoo.biz";
+            $mail->isSMTP(); 
+            $mail->CharSet = "utf-8"; 
+            $mail->SMTPAuth = true; 
+            $mail->SMTPSecure = "ssl";
+            $mail->Host = "gator4170.hostgator.com";
+            $mail->Port = 465; 
+            $mail->Username = "sales@bill-trade.com";
             $mail->Password = "Khmer@123";
-            $mail->setFrom("support@vdoo.biz", "Bill-Trade");
-            $mail->Subject = "Bill-Trade: ". $subject;
+            $mail->setFrom("sales@bill-trade.com", "sales@bill-trade.com");
+            $mail->Subject = $subject;
             $mail->MsgHTML($message);
             $mail->addAddress($to, $to);
             $mail->send();
@@ -103,10 +103,10 @@ class Right
             $mail->SMTPSecure = "ssl"; // or ssl
             $mail->Host = "gator4170.hostgator.com";
             $mail->Port = 465; // most likely something different for you. This is the mailtrap.io port i use for testing.
-            $mail->Username = "support@eccbuildingtrust.com";
+            $mail->Username = "sales@bill-trade.com";
             $mail->Password = "Khmer@123";
-            $mail->setFrom("support@eccbuildingtrust.com", "Build Trade");
-            $mail->Subject = "Bill-Trade: Reset Your Password";
+            $mail->setFrom("sales@bill-trade.com", "sales@bill-trade.com");
+            $mail->Subject = "Reset Your Password";
             $mail->MsgHTML("<p>Please click the link below to reset your password.</p><p><a href='{$a}'>{$a}</a></p>");
             $mail->addAddress($send_to, $send_to);
             $mail->send();

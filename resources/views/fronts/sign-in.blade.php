@@ -43,8 +43,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <h4 class="text-white">Email: </h4>
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="E-mail" required>
+                                            <h4 class="text-white">Username: </h4>
+                                            <input type="text" class="form-control" name="username" id="email" placeholder="username" required>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
