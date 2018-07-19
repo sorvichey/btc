@@ -33,7 +33,7 @@ class MembershipController extends Controller
             ->select('orders.*', 'plans.name', 'plans.price')
             ->get();
         $data['lowers'] = DB::table('memberships')
-            ->where('refby', $id)
+            ->where('refby', md5($id))
             ->orderBy('id', 'desc')
             ->get();
         $data['payments'] = DB::table('payments')

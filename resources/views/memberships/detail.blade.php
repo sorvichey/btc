@@ -95,7 +95,7 @@
                         @endif
                     </p>
                     <p></p>
-                    <strong class="text-success">Down Line</strong>
+                    <strong class="text-success">DownLine</strong>
                     <table class="table">
                         <thead>
                             <tr>
