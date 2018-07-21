@@ -1,11 +1,6 @@
 .header_area {
 	background: #17181b;
 }
-
-.section_padding_100 {
-    padding-top:  220px;
-}
-
 .footer-contact-area {
     background: #17181b;
 }
@@ -30,15 +25,6 @@
 .phone-text > p > span,
 .email-text > p > span {
     color: #ffc107;
-}
-
-.btn.submit-btn {
-    background: #ffc107;
-    height: 48px;
-    min-width: 185px;
-    color: #ffffff;
-    font-weight: 500;
-    border-radius: 30px;
 }
 
 .btn.submit-btn:hover {

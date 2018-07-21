@@ -56,6 +56,32 @@
                                         </li>
                                     @endforeach
                                 </ul>
+                                @if(Session::has('membership'))
+                                <div class="sing-up-button d-lg-none">
+                                <button type="button" class="btn btn-warning btn-member-left text-white btn-member dropdown-toggle" data-toggle="dropdown">
+                                    {{session('membership')->first_name}} {{session('membership')->last_name}}
+                                    </button>
+                                    <div class="dropdown-menu ">
+                                    <a class="dropdown-item text-warning" href="{{url('/profile')}}"> Profile</a>
+                                    <a class="dropdown-item text-warning" href="{{url('/order')}}"> Orders </a>
+                                    <a class="dropdown-item text-warning" href="{{url('/payment')}}"> Payment Request</a>
+                                    <a class="dropdown-item text-warning" href="{{url('/downline')}}"> Downlines</a>
+                                    <a class="dropdown-item text-danger" href="{{url('membership/sign-out')}}">Sign Out</a>
+                                    </div>
+                                </div>
+                                @else 
+                                <div class="col-sm-3">
+                                    <div class="row">
+                                        <div class="sing-up-button d-lg-block">
+                                            <a href="{{url('sign-in')}}">Sign In</a>
+                                        </div>
+                                        <div class="sing-up-button d-lg-block">
+                                            <a href="{{url('sign-up')}}">Sign Up</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                @endif
                             </div>
                         </nav>
                     </div>
@@ -79,7 +105,7 @@
                                     <a class="dropdown-item text-danger" href="{{url('membership/sign-out')}}">Sign Out</a>
                                     </div>
                                 </div>
-                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

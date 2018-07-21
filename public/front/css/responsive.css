@@ -1,3 +1,16 @@
+.section_padding_100 {
+    padding-top:  220px;
+}
+
+.btn.submit-btn {
+    background: #ffc107;
+    height: 48px;
+    min-width: 185px;
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 30px;
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {
     .menu_area .navbar-brand {
         font-size: 42px;
@@ -48,14 +61,13 @@
     #ca-navbar {
         padding: 20px;
         border-radius: 3px;
-        background-color: #5b32b4;
+        background-color: #131010d1;
         text-align: left;
     }
     .sing-up-button {
         margin-top: 30px;
         text-align: left;
     }
-
 }
 
 /* Responsive Styles for various devices */
@@ -101,6 +113,11 @@
     .video-area {
         height: 250px;
     }
+    .dropdown-menu.show {
+        margin-left: 15px;
+        margin-top: -3px;
+        background: #131010d1;
+    }
     .section_padding_100_70 {
         padding-top: 30px;
         padding-bottom: 0;
@@ -114,11 +131,33 @@
     .section_padding_70 {
         padding-bottom: 10px;
     }
+    .section-heading {
+        margin-top: -70px;
+    }
+    .section_padding_100_90 {
+        padding-bottom: 0;
+    }
+    .section_padding_100 {
+        padding-top: 90px;
+        padding-bottom: 0;
+    }
+    .page-m {
+        padding-top: 10px;
+    }
+    .btn.submit-btn {
+        min-width: 140px;
+    }
 }
 
 @media (max-width: 360px) {
+    .btn.submit-btn {
+        min-width: 140px;
+    }
     .text-s-mobile {
         font-size: 10px;
+    }
+    .section_padding_100_90 {
+        padding-bottom: 0;
     }
     .carousel-caption {
         padding-top: 0; 
@@ -132,6 +171,10 @@
     }
     .text-video {
         font-size: 25px;
+    }
+    .dropdown-menu.show {
+        margin-left: 15px;
+        margin-top: -3px;
     }
     .video-area {
         height: 250px;
@@ -148,5 +191,12 @@
     }
     .footer-menu ul li a {
         font-size: 12px;
+    }
+    .section_padding_100 {
+        padding-top: 90px;
+        padding-bottom: 0;
+    }
+    .page-m {
+        padding-top: 10px;
     }
 }

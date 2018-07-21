@@ -65,7 +65,7 @@
     </section>
     @else 
          <!-- ***** Wellcome Area Start ***** -->
-    <section class="wellcome_area section_padding_100" id="home">
+    <section class="wellcome_area section_padding_100 page-m" id="home">
         <div class="container">
             <div class="row h-100 align-items-center">
                 <div class="col-md-12 section_padding_100">
