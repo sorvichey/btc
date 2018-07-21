@@ -1,6 +1,5 @@
 
 @import url('css/font.css');
-@import 'css/bootstrap.min.css';
 @import 'css/animate.css';
 @import 'css/owl.carousel.min.css';
 
@@ -22,6 +21,9 @@ body {
  padding-left: 10px; 
 }
 
+.video {
+    height: 600px;
+}
 h1,
 h2,
 h3,
@@ -851,7 +853,9 @@ p {
 .footer-menu ul li:last-child a {
     border-right: 0 solid #ddd;
 }
-
+.footer-contact-area2 {
+    margin-bottom: 20px;
+}
 .footer-social-icon {
     margin-bottom: 30px;
 }
@@ -868,4 +872,19 @@ p {
     text-align: left;
     opacity: 0;
     animation: fadeIn 2s ease-in both;
+}
+
+.sup {
+    background: #fff;
+}
+
+.sup2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar-light .navbar-toggler {
+    color: rgba(0,0,0,.5);
+    border-color: rgba(0,0,0,.1);
+    background: #fff;
 }

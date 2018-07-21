@@ -2,7 +2,7 @@
 @section('content')
     <link href="{{asset('front/css/page.css')}}" rel="stylesheet">
     <!-- ***** Contact Us Area Start ***** -->
-    <section class="footer-contact-area section_padding_100 clearfix" id="contact">
+    <section class="footer-contact-area section_padding_100 " id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -13,8 +13,14 @@
                         <p>Register a new member here!</p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="col-md-12">
+            </div>
+        </div>
+    </section>
+    <section class="sup">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+        
                     @if(Session::has('sms'))
                             <div class="alert alert-success" role="alert">
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -35,67 +41,74 @@
                                 </div>
                             </div>
                         @endif
-                    </div>
+             
                     <div class="contact_from">
                         <form action="{{url('sign-up/save')}}" method="post" id="form_provider" accept-charset="UTF-8" onsubmit="check(event)">
                         {{csrf_field()}}
                             <div class="contact_input_area">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <h4 class="text-white">First Name: </h4>
-                                            <input type="text" class="form-control" name="first_name" id="first_name" value="{{old('first_name')}}" placeholder="First Name" required>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <h4>First Name <span class="text-danger">*</span> </h4>
+                                                    <input type="text" class="form-control" name="first_name" id="first_name" value="{{old('first_name')}}" placeholder="First Name" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <h4>Last Name <span class="text-danger">*</span></h4>
+                                                    <input type="text" class="form-control" name="last_name" id="last_name"  value="{{old('last_name')}}"  placeholder="Last Name" required>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
                                         <div class="form-group">
-                                            <h4 class="text-white">Last Name: </h4>
-                                            <input type="text" class="form-control" name="last_name" id="last_name"  value="{{old('last_name')}}"  placeholder="Last Name" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <h4 class="text-white">Gender</h4>
+                                            <h4>Gender</h4>
                                             <select name="gender" class="form-control" id="gender">
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
                                             </select>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
                                         <div class="form-group">
-                                            <h4 class="text-white">Email: </h4>
+                                            <h4>Country</h4>
+                                            <select name="country" class="form-control" id="country">
+                                                @foreach($countries as $c)
+                                                <option value="{{$c->name}}">{{$c->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <h4>City <span class="text-danger">*</span> </h4>
+                                            <input type="text" class="form-control" name="city" id="city"  value="{{old('city')}}" placeholder="City" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <h4>Postal Code <span class="text-danger">*</span> </h4>
+                                            <input type="text" class="form-control" name="postal_code" id="postal_code"  value="{{old('postal_code')}}" placeholder="Postal Code" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <h4>Email <span class="text-danger">*</span></h4>
                                             <input type="email" class="form-control" name="email" id="email"  value="{{old('email')}}" placeholder="E-mail" required>
                                         </div>
-                                    </div>
-                                    
-                                    <div class="col-md-12">
-                                            <div class="form-group">
-                                                <h4 class="text-white">Repeat Email: </h4>
-                                                <input type="email" class="form-control" name="remail" id="remail"  value="{{old('email')}}" placeholder="E-mail" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <h4 class="text-white">Username: </h4>
-                                                    <input type="text" class="form-control" name="username" id="username"  value="{{old('username')}}" placeholder="Username" required>
-                                                </div>
-                                            </div>
-                                    <div class="col-md-12">
                                         <div class="form-group">
-                                            <h4 class="text-white">Password: </h4>
+                                            <h4>Repeat Email <span class="text-danger">*</span> </h4>
+                                            <input type="email" class="form-control" name="remail" id="remail"  value="{{old('remail')}}" placeholder="Repeat E-mail" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <h4>Username <span class="text-danger">*</span> </h4>
+                                            <input type="text" class="form-control" name="username" id="username"  value="{{old('username')}}" placeholder="Username" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <h4>Password <span class="text-danger">*</span> <small class="text-secondary">Your password should be equal or max than 6 characters</small></h4>
                                             <input type="password" class="form-control" name="password" id="password" placeholder="******" required>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
                                         <div class="form-group">
-                                            <h4 class="text-white">Confirm Password: </h4>
+                                            <h4 >Confirm Password <span class="text-danger">*</span></h4>
                                             <input type="password" class="form-control" name="cpassword" id="cpassword" placeholder="******" required>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12">
                                         <div class="form-group">
-                                            <p class="text-white" id="text-white"> 
+                                            <p class="text-dark" id="text-white"> 
                                                 <label>
                                                 <input type="checkbox" id="term" > 
                                                 I accept the terms and conditions of Bil-Trade.
@@ -103,11 +116,7 @@
                                                 </label>
                                             </p>
                                         </div>
-                                    </div>
-                                   
-                                    <div class="col-12">
                                         <button type="submit" class="btn submit-btn  btn-success-c">Sign Up</button>
-                                    </div>
                                 </div>
                             </div>
                             <!-- Message Input Area End -->
@@ -115,6 +124,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <script charset="utf-8" type="text/javascript">
             function check(event)

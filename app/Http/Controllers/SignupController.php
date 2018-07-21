@@ -10,7 +10,10 @@ class SignupController extends Controller
     // index
     public function index()
     {
-        return view('fronts.sign-up');
+        $data['countries'] = DB::table('apps_countries')
+            ->orderBy('name')
+            ->get();
+        return view('fronts.sign-up', $data);
     }
     public function save(Request $r)
     {
@@ -33,6 +36,9 @@ class SignupController extends Controller
                 'gender' => $r->gender,
                 'email' => $r->email,
                 'username' => $r->username,
+                'country' => $r->country,
+                'city' => $r->city,
+                'postal_code' => $r->postal_code,
                 'refby' => session('ref'),
                 'password' => password_hash($r->password, PASSWORD_BCRYPT)
             );

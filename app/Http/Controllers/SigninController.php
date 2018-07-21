@@ -24,8 +24,6 @@ class SigninController extends Controller
         {  
             if(password_verify($pass, $membership->password) && $membership->verify==1)
             {
-              
-                
                 if($r->session()->get('membership')!=NULL)
                 {
                     $r->session()->forget('membership');
@@ -65,6 +63,9 @@ class SigninController extends Controller
     {
         $data['profile'] = DB::table('memberships')
             ->where('id',$id)->first();
+        $data['countries'] = DB::table('apps_countries')
+            ->orderBy('name')
+            ->get();
         return view('fronts.profile-edit', $data);
     }
 
@@ -87,7 +88,10 @@ class SigninController extends Controller
             'last_name' => $r->last_name,
             'gender' => $r->gender,
             'email' => $r->email,
-            'username' => $r->username
+            'username' => $r->username,  
+            'country' => $r->country,
+            'city' => $r->city,
+            'postal_code' => $r->postal_code,
         );
         if($r->photo) {
             $file = $r->file('photo');

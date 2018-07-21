@@ -15,8 +15,9 @@
     <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Core Stylesheet -->
+    <link href="{{asset('front/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('front/style.css')}}" rel="stylesheet">
-
+  
     <!-- Responsive CSS -->
     <link href="{{asset('front/css/responsive.css')}}" rel="stylesheet">
     <style>

@@ -73,14 +73,22 @@ p {
     color: #fff;
 }
 
-#name, #email, #message , #password, #cpassword, #first_name, #last_name, #gender, #photo{
+#name, #email, #message , #password, 
+#remail, #username, #country, #cpassword, 
+#first_name, #last_name, #gender, #photo, 
+#city , #postal_code{
     font-size: 18px;
     padding: 15px 15px;
     border-radius: 31px;
+    border: 1px solid #222;
 }
 
 select.form-control:not([size]):not([multiple]) {
     height: 52px;
+}
+
+small {
+    font-size: 11px;
 }
 
 .form-control {
@@ -89,4 +97,9 @@ select.form-control:not([size]):not([multiple]) {
 
 .pd10 {
     padding-top: 10px;
+}
+
+.contact_from {
+    padding-bottom: 20px;
+    padding-top: 20px;
 }

@@ -1,19 +1,24 @@
 @extends('layouts.front')
 @section('content')
     <link href="{{asset('front/css/page.css')}}" rel="stylesheet">
-    <!-- ***** Contact Us Area Start ***** -->
-    <section class="footer-contact-area section_padding_100 clearfix" id="contact">
+    <section class="pricing-plane-area page-plan section_padding_100_90 clearfix" id="pricing">
         <div class="container">
-            <h2 class="text-white">My Profile</h2>
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <h2 class="text-plan text-white">Profile</h2>
+                        <div class="line-shape"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <section>
-        <div class="container" style="margin-top: 54px">
+    <section class="sup sup2">
+        <div class="container">
             <div class="row">
                 <div class="col-md-6">
                         <h2>{{$profile->first_name}} {{$profile->last_name}}</h2>
                         <hr>
-                        
                         <div>
                             Email: {{$profile->email}}
                         </div>
@@ -22,6 +27,15 @@
                         </div>
                         <div>
                             Username: {{$profile->username}}
+                        </div>
+                        <div>
+                            Country: {{$profile->country}}
+                        </div>
+                        <div>
+                            City: {{$profile->city}}
+                        </div>
+                        <div>
+                            Postal Code: {{$profile->postal_code}}
                         </div>
                         <p></p>
                    
@@ -44,9 +58,6 @@
                 </div>
             </div>
         </div>
-        <p>&nbsp;</p>
-        <hr>
-        <p>&nbsp;</p>
     </section>
     <script>
         function loadFile(e){

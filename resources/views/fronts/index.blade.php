@@ -21,14 +21,14 @@
                     <div class="carousel-item active">
                         <img src="{{asset('front/slides/'.$slide->photo)}}" width="100%">
                         <div class="carousel-caption slide-text">
-                        <h3 class="text-white">{{$slide->name}}</h3>
+                        <h3 class="text-white text-s-mobile">{{$slide->name}}</h3>
                         </div>   
                     </div>
                 @else
                     <div class="carousel-item">
                         <img src="{{asset('front/slides/'.$slide->photo)}}" width="100%">
                         <div class="carousel-caption slide-text" >
-                        <h3 class="text-white">{{$slide->name}}</h3>
+                        <h3 class="text-white text-s-mobile">{{$slide->name}}</h3>
                         </div>   
                     </div>
                 @endif
@@ -48,16 +48,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-
                         <div class="special_description_content">
                             <h2 class="text-center text-white">
                                 <img src="{{asset('front/img/bitcoin-icon.png')}}" width="90" alt="">Cryptocurrency</h2>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="more wow bounceInDown" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceInDown;">
-                        {{-- <a href="https://coinmarketcap.com/" target="_blank">View All</a> --}}
-        
                     </div>
                 </div>
             </div>
@@ -85,7 +79,7 @@
                 <div class="col-12">
                     <h2 class="text-center text-video ">Spectre.ai Trading Platform</h2>
                     <div class="video-area">
-                        <iframe width="100%" height="600" src="{{$video->url}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                        <iframe width="100%" class="video" src="{{$video->url}}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -105,7 +99,7 @@
             </div>
             <div class="row text-center">
                 @foreach($plans as $plan)
-                    <div class="col-md-3 col-lg-3">
+                    <div class="col-md-3 col-lg-3 plan-m">
                         <div class="single-price-plan h-100 text-center">
                             <div class="package-plan">
                                 <h5>{{$plan->name}}</h5>
