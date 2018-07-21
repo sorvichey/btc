@@ -22,8 +22,11 @@ class SignupController extends Controller
         $count_email = DB::table('memberships')
             ->where('email', $r->email)
             ->count();
+        $counter = DB::table('memberships')
+            ->where('username', $r->username)
+            ->count();
         $pass_leg = strlen($r->password);
-        if($count_email === 0 && $pass_leg >= 6) {
+        if($count_email === 0 && $pass_leg >= 6 && $counter==0) {
             $data = array(
                 'first_name' => $r->first_name,
                 'last_name'=> $r->last_name,
@@ -60,9 +63,13 @@ EOT;
                 return redirect('/sign-up')->withInput();
             }
         } else {
-            if ($email > 0) {
+            if ($count_email > 0) {
                 $sms1 = "Your email already exist. Please use a different one!";
             } 
+            else if($counter>0)
+            {
+                $sms1 = "Ther username is already existed. Please use a different one!";
+            }
             if ($pass_leg < 6) {
                 $sms1 = "Your password should be equal or max than 6 characters";
             } 

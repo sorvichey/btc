@@ -56,7 +56,7 @@
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="more wow bounceInDown" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceInDown;">
-                        <a href="https://coinmarketcap.com/" target="_blank">View All</a>
+                        {{-- <a href="https://coinmarketcap.com/" target="_blank">View All</a> --}}
         
                     </div>
                 </div>
